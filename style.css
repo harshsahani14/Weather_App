@@ -1,0 +1,270 @@
+*,*::before,*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Merriweather Sans',sans-serif;
+}
+
+:root{
+    --colorDark1:#112D4E;
+    --colorDark2:#3F72AF;
+    --colorLight1:#DBE2EF;
+    --colorLight2:#F9F7F7;
+
+}
+
+.wrapper{
+
+    width:100vw;
+    height:100vh;
+    background-image: linear-gradient(160deg,#112d4e 0%,#3f72af 100%);
+    color: var(--colorLight2);
+    overflow-y: hidden;
+}
+
+h1{
+    text-align: center;
+    text-transform: uppercase;
+    padding-top: 20px;
+}
+
+.tab-container{
+
+    padding-top: 4rem;
+    max-width: 550px;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+}
+
+/* You can set the margin property to auto to horizontally center the element within its container. */
+
+
+.tab{
+
+    font-size:0.875rem;
+    letter-spacing: 1.75px;
+    cursor: pointer;
+    padding: 5px 8px;
+}
+
+.currentTab{
+
+    background-color: rgba(219,226,239,0.5);
+    border-radius: 4px;
+
+}
+
+
+.weather-container{
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-block:4rem;
+} 
+
+.grantLocation-container{
+
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.grantLocation-container.active{
+
+    display: flex;
+}
+
+.grantLocation-container p:first-of-type{
+
+    font-weight: 600;
+    font-size: 1.75rem;
+}
+
+.grantLocation-container p:last-of-type{
+
+    font-size: 0.85rem;
+    letter-spacing: 0.75px;
+    margin-top: 0.75rem;
+    font-weight: 500;
+    margin-bottom: 1.75rem;
+}
+
+.grantLocation-container img{
+
+    margin-bottom: 2rem;
+}
+
+
+.grantAccess{
+
+    /* Removes the default styling of a button */
+    all:unset;
+    padding: 10px 30px;
+    cursor: pointer;
+    background-color: var(--colorDark2);
+    border-radius: 5px ;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+
+}
+
+
+.loading-container{
+
+    display:none;
+    flex-direction: column;
+
+}
+
+.loading-container.active{
+    display: flex;
+
+}
+
+.loading-container p{
+
+    text-transform: uppercase;
+    text-align: center;
+
+}
+
+.location-container{
+
+    display: flex;
+    align-items: center;
+    gap:0 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.weatherInfo-container{
+
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap:10px;
+}
+
+.weatherInfo-container.active{
+    display: flex;
+}
+
+.weatherInfo-container p{
+
+    font-size: 1.5rem;
+    font-weight: 200;
+}
+
+
+.location-container p{
+    font-size: 2rem;
+}
+
+.location-container img{
+
+    width: 30px;
+    height: 20px;
+}
+
+p[data-temperature]{
+
+    font-size: 2.75rem;
+    font-weight: 700;
+}
+
+.otherWeather-container{
+
+    display: flex;
+    gap:10px 20px;
+    margin-top:2rem;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2rem;    
+}
+
+.parameter{
+
+    background-color: rgba(219,226,239,0.5);
+    display: flex;
+    flex-direction: column;
+    /* gap:5px 0; */
+    width: 200px;
+    
+    padding: 1rem;
+    border-radius: 5px;
+    align-items: center;
+    
+}
+
+.parameter img {
+
+    width: 50px;
+    height: 50px;
+}
+
+.parameter p:first-of-type{
+
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 1.15rem;
+}
+
+.parameter p:last-of-type{
+    
+    font-size: 1.3rem;
+    font-weight: 200;
+}
+
+
+
+.form-container{
+
+    display: none;
+    gap:0 10px;
+    width: 90%;
+    max-width: 550px;
+    margin-bottom: 2rem;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.form-container.active{
+    display: flex;
+}
+
+.form-container input{
+    all:unset;
+    width: 400px;
+    padding: 0 20px;
+    background-color: rgba(219,226,239,0.5);
+    border-radius: 5px;
+    height:40px;
+}
+
+.form-container input::placeholder{
+    color: rgba(255,255,255,0.7);
+}
+
+.form-container input:focus{
+    outline: 3px solid rgba(255,255,255,0.7);
+}
+
+.form-container .searchBtn{
+
+    all:unset;
+    width: 40px;
+    height: 40px;
+    background-color: var(--colorDark2);
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <div class="wrapper">
+
+        <h1>WEATHER APP</h1>
+
+        <div class="tab-container">
+
+            <p class="tab" id = "myweather"data-userWeather >Your Weather</p>
+            <p class="tab" id = "searchweather" data-searchWeather >Search Weather</p>
+        </div>
+
+        <div class="weather-container">
+
+
+            <!-- Grant location -->
+            <div class="grantLocation-container">
+
+                <!-- Loading lazy means the image will nit be loaded until User has not scrolled down to the given image location -->
+                <img src="images/location.png" alt="" width="80" height="80" loading="lazy">
+    
+                <p class="first">Grant Location Access</p>
+                <p class="second">Allow Acces to get Weather  Information </p>
+                <button class="grantAccess">GRANT ACCESS</button>
+    
+            </div>
+
+
+             
+        <!-- Search Tab -->
+        <form  class="form-container">
+
+            <input type="text" placeholder="Search for city.." data-searchInput>
+            <button class="searchBtn" type="submit"> 
+                <img src="images/search.png" alt="" width="20" height="20"  loading="lazy" >
+            </button>
+        </form >
+
+
+        <!-- Loading screen  -->
+
+        <div class="loading-container">
+            <img src="images/loading.gif" alt="" width="150" height="150">
+            <p>Loading</p>
+        </div>
+
+
+
+        <!-- Weather Information -->
+        <div class="weatherInfo-container">
+
+            <!-- Location -->
+            <div class="location-container">
+                <p data-cityName></p>
+                <img data-countryIcon>
+            </div>
+
+            <!-- Weather description -->
+            <p data-weatherDesc></p>
+
+            <!-- weather icon -->
+            <img data-weatherIcon>
+
+            <!-- temperature -->
+            <p data-temperature></p>
+
+            <!-- Other weather information -->
+
+            <div class="otherWeather-container">
+
+                <!-- Card 1 -->
+                <div class="parameter"> 
+                    <img src="images/wind.png" alt="">
+                    <p>Windspeed</p>
+                    <p data-windspeed></p>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="parameter"> 
+                    <img src="images/humidity.png" alt="">
+                    <p>humidity</p>
+                    <p data-Humidity></p>
+                </div>
+
+                <!-- Card 3  -->
+
+                <div class="parameter"> 
+                    <img src="images/cloud.png" alt="">
+                    <p>Cloud</p>
+                    <p data-cloud></p>
+                </div>
+
+            </div>
+
+            
+
+        </div>
+
+        </div>
+
+        
+
+        
+
+       
+        
+
+        
+
+        
+    </div>
+    
+    <script src="index.js"></script>
+</body>
+</html>
