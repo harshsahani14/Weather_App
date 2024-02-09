@@ -268,3 +268,12 @@ p[data-temperature]{
     cursor: pointer;
 }
 
+.error{
+    display: none;
+    width:250px;
+    height: 250px;
+}   
+
+.error.active{
+    display: flex;
+}

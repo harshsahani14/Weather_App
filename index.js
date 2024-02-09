@@ -8,7 +8,7 @@ let weatherInfoContainer = document.querySelector(".weatherInfo-container");
 let grantAcessBtn = document.querySelector(".grantAccess");
 let inputForm = document.querySelector("[data-searchInput]");
 let searchBtn = document.querySelector(".searchBtn")
-
+let errorImg = document.querySelector(".error")
 
 
 // intially variables need
@@ -28,6 +28,7 @@ function showTab(clickedTab){
         if(!searchTab.classList.contains("currentTab")){
             // If I am on the search Tab an I want to show the user tab
 
+    
             searchForm.classList.remove("active");
             weatherInfoContainer.classList.remove("active");
             // To show the user weather we want to check if the coordinates are available in session or not
@@ -93,14 +94,17 @@ async function getWeatherInfo(userCoordinates){
         loadingScreen.classList.remove("active");
         weatherInfoContainer.classList.add("active");
 
+        errorImg.classList.remove("active");
         renderWeatherInfo(data,temp);
         
         
     }catch(e){
         loadingScreen.classList.remove("active");
         // error dispaly template
-        alert("Could not get the weather");
-        console.log(e);
+
+        errorImg.classList.add("active");
+
+        
     }
 }
 
@@ -117,6 +121,7 @@ function renderWeatherInfo(data,temp){
 
     console.log(data);
 
+    
     city.innerHTML = data?.name;
     countryIcon.src = `https://flagcdn.com/144x108/${data?.sys?.country.toLowerCase()}.png`;
     desc.innerHTML = data?.weather[0].description;
@@ -181,9 +186,12 @@ async function searchWeatherInfo(city){
         temp = temp.toFixed(2);
         loadingScreen.classList.remove("active");
         weatherInfoContainer.classList.add("active");
+
+        errorImg.classList.remove("active");
         renderWeatherInfo(data,temp);
     }catch(e){
-        alert("Could not get the weather info")
+        loadingScreen.classList.remove("active");
+        errorImg.classList.add("active");
     }
 
 }
